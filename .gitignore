@@ -6,7 +6,9 @@
 .idea/
 *.iml
 *.iws
+/lib
 
 # Maven
 target/
 log/
+/.idea
