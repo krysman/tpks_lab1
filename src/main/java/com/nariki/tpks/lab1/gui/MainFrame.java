@@ -55,5 +55,23 @@ public class MainFrame extends JFrame{
             }
         });
 
+
+        JButton executeButton = new JButton("Выполнить преобразование");
+        executeButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e)
+            {
+                if(fileHasBeenChoosen) {
+
+                    // TODO:
+                } else {
+                    JOptionPane.showMessageDialog(null, "Сначала выберите файл!", "Ошибка!", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+
+        controlPanel.add(selectFileButton, BorderLayout.WEST);
+        controlPanel.add(executeButton, BorderLayout.CENTER);
+
+        getContentPane().add(controlPanel, BorderLayout.CENTER);
     }
 }
