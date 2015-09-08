@@ -62,7 +62,7 @@ public class MainFrame extends JFrame{
             {
                 if(fileHasBeenChoosen) {
 
-                    // TODO:
+                    // TODO: создать объект графа и передать его на обработку
                 } else {
                     JOptionPane.showMessageDialog(null, "Сначала выберите файл!", "Ошибка!", JOptionPane.ERROR_MESSAGE);
                 }
@@ -73,5 +73,7 @@ public class MainFrame extends JFrame{
         controlPanel.add(executeButton, BorderLayout.CENTER);
 
         getContentPane().add(controlPanel, BorderLayout.CENTER);
+
+        pack();
     }
 }
