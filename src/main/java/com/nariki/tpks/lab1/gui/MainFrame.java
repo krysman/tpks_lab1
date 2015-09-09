@@ -1,20 +1,23 @@
 package com.nariki.tpks.lab1.gui;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 
-public class MainFrame extends JFrame{
+public class MainFrame extends JFrame {
 
     private boolean fileHasBeenChoosen;
+    private final String FILE_STATUS_NOT_CHOSEN = "Файл не выбран";
+    private  JLabel fileStatusLabel;
 
     public MainFrame() {
         super("ТПКС - Лабораторная работа №1");
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(400, 250);
+        setSize(450, 200);
 
         setResizable(false);
 
@@ -25,12 +28,13 @@ public class MainFrame extends JFrame{
 
         // управляющая  панель
         JPanel controlPanel = new JPanel();
-        controlPanel.setLayout(new BorderLayout());
+        controlPanel.setLayout(null);
 
         // управляющие кнопки:
 
         // кнопка выбора файла
         JButton selectFileButton = new JButton("Выберите файл");
+        selectFileButton.setBounds(30, 20, 180, 50);
         selectFileButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JFileChooser fileChooser = new JFileChooser();
@@ -43,11 +47,13 @@ public class MainFrame extends JFrame{
 
                     if(inputFileChecker.isFileCorrect()) {
                         fileHasBeenChoosen = true;
+                        fileStatusLabel.setText("Выбран файл: " + file.getName());
                         // TODO: создание объекта графа по исходным данным из файла
                     } else {
                         // с файлом что-то не так определяем проблему и выводим соответствующее сообщение об ошибке
                         file = null;
                         fileHasBeenChoosen = false;
+                        fileStatusLabel.setText(FILE_STATUS_NOT_CHOSEN);
 
                         JOptionPane.showMessageDialog(null, inputFileChecker.getErrorMessage(), "Ошибка!", JOptionPane.ERROR_MESSAGE);
                     }
@@ -57,9 +63,9 @@ public class MainFrame extends JFrame{
 
 
         JButton executeButton = new JButton("Выполнить преобразование");
+        executeButton.setBounds(240, 20, 180, 50);
         executeButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e)
-            {
+            public void actionPerformed(ActionEvent e) {
                 if(fileHasBeenChoosen) {
 
                     // TODO: создать объект графа и передать его на обработку
@@ -69,11 +75,13 @@ public class MainFrame extends JFrame{
             }
         });
 
-        controlPanel.add(selectFileButton, BorderLayout.WEST);
-        controlPanel.add(executeButton, BorderLayout.CENTER);
+        fileStatusLabel = new JLabel(FILE_STATUS_NOT_CHOSEN);
+        fileStatusLabel.setBounds(20, 70, 350, 40);
+
+        controlPanel.add(fileStatusLabel);
+        controlPanel.add(selectFileButton);
+        controlPanel.add(executeButton);
 
         getContentPane().add(controlPanel, BorderLayout.CENTER);
-
-        pack();
     }
 }

@@ -24,7 +24,7 @@ public class InputFileChecker {
             if(fileIsNotEmpty) {
 
                 // TODO: проверка файла на содержание валидной матрицы инцидентности
-
+                return true;
             } else { // если файл пустой то он не корректный
                 errorString = "Файл пустой!";
                 return false;
@@ -34,7 +34,6 @@ public class InputFileChecker {
             return false;
         }
 
-        return false;
     }
 
     public String  getErrorMessage() {
