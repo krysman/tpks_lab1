@@ -1,7 +1,9 @@
 package com.nariki.tpks.lab1.gui;
 
+import com.nariki.tpks.lab1.model.IncidenceMatrix;
+import com.nariki.tpks.lab1.model.IncidenceMatrixValidator;
+
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,9 +11,11 @@ import java.io.File;
 
 public class MainFrame extends JFrame {
 
-    private boolean fileHasBeenChoosen;
+    private boolean fileHasBeenChosen;
     private final String FILE_STATUS_NOT_CHOSEN = "Файл не выбран";
     private  JLabel fileStatusLabel;
+
+    private IncidenceMatrix incidenceMatrix;
 
     public MainFrame() {
         super("ТПКС - Лабораторная работа №1");
@@ -46,13 +50,16 @@ public class MainFrame extends JFrame {
                     InputFileChecker inputFileChecker = new InputFileChecker(file);
 
                     if(inputFileChecker.isFileCorrect()) {
-                        fileHasBeenChoosen = true;
+                        fileHasBeenChosen = true;
                         fileStatusLabel.setText("Выбран файл: " + file.getName());
-                        // TODO: создание объекта графа по исходным данным из файла
+
+
+                        // создание матрицы инфидентности по исходным данным из файла
+                        incidenceMatrix = new IncidenceMatrix(inputFileChecker.getIncidenceMatrix());
                     } else {
                         // с файлом что-то не так определяем проблему и выводим соответствующее сообщение об ошибке
                         file = null;
-                        fileHasBeenChoosen = false;
+                        fileHasBeenChosen = false;
                         fileStatusLabel.setText(FILE_STATUS_NOT_CHOSEN);
 
                         JOptionPane.showMessageDialog(null, inputFileChecker.getErrorMessage(), "Ошибка!", JOptionPane.ERROR_MESSAGE);
@@ -66,9 +73,9 @@ public class MainFrame extends JFrame {
         executeButton.setBounds(240, 20, 180, 50);
         executeButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if(fileHasBeenChoosen) {
+                if(fileHasBeenChosen) {
 
-                    // TODO: создать объект графа и передать его на обработку
+                    // TODO: передать матрицу инфидентности на обработку   ->  incidenceMatrix
                 } else {
                     JOptionPane.showMessageDialog(null, "Сначала выберите файл!", "Ошибка!", JOptionPane.ERROR_MESSAGE);
                 }

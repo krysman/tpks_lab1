@@ -3,7 +3,6 @@ package com.nariki.tpks.lab1.gui;
 import com.nariki.tpks.lab1.model.IncidenceMatrixValidator;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -11,6 +10,8 @@ public class InputFileChecker {
 
     private File fileToCheck;
     private String errorString;
+
+    private int [][] incidenceMatrix;
 
     public InputFileChecker(File fileToCheck) {
         this.fileToCheck = fileToCheck;
@@ -29,11 +30,17 @@ public class InputFileChecker {
             if(fileIsNotEmpty) {
 
                 // считать построчно содержание файла
-                String [] matrix = readAllLinesFromFile();
+                String [] matrix = getFileContentByLines();
                 IncidenceMatrixValidator incidenceMatrixValidator = new IncidenceMatrixValidator(matrix);
 
-                // TODO: проверка файла на содержание валидной матрицы инцидентности
+                // проверка файла на содержание валидной матрицы инцидентности
+                if(incidenceMatrixValidator.isIncidenceMatrixValid()) {
+                    incidenceMatrix = incidenceMatrixValidator.getIncidenceMatrix();
 
+                } else {
+                    errorString = incidenceMatrixValidator.getErrorString();
+                    return false;
+                }
 
                 return true;
             } else { // если файл пустой то он не корректный
@@ -47,7 +54,11 @@ public class InputFileChecker {
 
     }
 
-    private String[] readAllLinesFromFile() {
+    public int[][] getIncidenceMatrix() {
+        return incidenceMatrix;
+    }
+
+    public String[] getFileContentByLines() {
         List<String> allStringsInFile = new LinkedList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(fileToCheck))) {
             String line;
@@ -60,7 +71,11 @@ public class InputFileChecker {
             e.printStackTrace();
         }
 
-        return (String[]) allStringsInFile.toArray();
+        String [] result = new String[allStringsInFile.size()];
+        for(int i = 0; i < allStringsInFile.size(); i++) {
+            result[i] = allStringsInFile.get(i);
+        }
+        return result;
     }
 
     public String  getErrorMessage() {
