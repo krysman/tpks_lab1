@@ -1,5 +1,6 @@
 package com.nariki.tpks.lab1.gui;
 
+import com.nariki.tpks.lab1.action.MatrixConverter;
 import com.nariki.tpks.lab1.model.IncidenceMatrix;
 import com.nariki.tpks.lab1.model.IncidenceMatrixValidator;
 
@@ -76,7 +77,9 @@ public class MainFrame extends JFrame {
                 if(fileHasBeenChosen) {
 
                     // TODO: передать матрицу инфидентности на обработку   ->  incidenceMatrix
-
+                    MatrixConverter matrixConverter = new MatrixConverter();
+                    matrixConverter.convert(incidenceMatrix.getNumberOfVertex(), incidenceMatrix.getMatrixAsBitVector());
+                    matrixConverter.printAM();
                     /*
                     // print bit vectors
                     for(int i = 0; i < incidenceMatrix.getMatrixAsBitVector().length; i++) {

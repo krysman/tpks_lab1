@@ -75,4 +75,8 @@ public class IncidenceMatrix {
     public long[] getMatrixAsBitVector() {
         return matrixAsBitVector;
     }
+
+    public int getNumberOfVertex() {
+        return numberOfVertex;
+    }
 }
