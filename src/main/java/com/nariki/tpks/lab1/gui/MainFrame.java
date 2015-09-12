@@ -76,6 +76,12 @@ public class MainFrame extends JFrame {
                 if(fileHasBeenChosen) {
 
                     // TODO: передать матрицу инфидентности на обработку   ->  incidenceMatrix
+
+                    /*
+                    // print bit vectors
+                    for(int i = 0; i < incidenceMatrix.getMatrixAsBitVector().length; i++) {
+                        System.out.println(Long.toBinaryString(incidenceMatrix.getMatrixAsBitVector()[i]));
+                    }*/
                 } else {
                     JOptionPane.showMessageDialog(null, "Сначала выберите файл!", "Ошибка!", JOptionPane.ERROR_MESSAGE);
                 }

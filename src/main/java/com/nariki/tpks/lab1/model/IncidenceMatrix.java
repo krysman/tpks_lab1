@@ -5,13 +5,26 @@ public class IncidenceMatrix {
 
     private int numberOfVertex;
     private long[] matrixAsBitVector;
+    private int[][] incidenceMatrix;
 
     public IncidenceMatrix(int [][] incidenceMatrix) {
         numberOfVertex = incidenceMatrix.length;
-        matrixAsBitVector = new long[numberOfVertex];
+        matrixAsBitVector = new long[incidenceMatrix[0].length];
+
+        this.incidenceMatrix = incidenceMatrix;
+
+        /*
+        // print incidence Matrix
+        for(int i = 0; i < incidenceMatrix.length; i++) {
+            for(int j = 0; j < incidenceMatrix[0].length; j++) {
+                System.out.print(incidenceMatrix[i][j] + " ");
+            }
+            System.out.println();
+        }*/
 
         createMatrixAsBitVector(incidenceMatrix);
     }
+
 
     private void createMatrixAsBitVector(int [][] incidenceMatrix) {
 
@@ -36,7 +49,7 @@ public class IncidenceMatrix {
 
 
         // j*2  -  указывает на позицию в битовом векторе
-        for(int i = 0; i < incidenceMatrix.length; i++) {
+        for(int i = 0; i < matrixAsBitVector.length; i++) {
             for(int j = numberOfVertex - 1; j >= 0; j--) {
                 // маски
                 long maskForPositiveOne = 1;
