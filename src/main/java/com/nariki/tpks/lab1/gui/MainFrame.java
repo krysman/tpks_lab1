@@ -2,7 +2,8 @@ package com.nariki.tpks.lab1.gui;
 
 import com.nariki.tpks.lab1.action.MatrixConverter;
 import com.nariki.tpks.lab1.model.IncidenceMatrix;
-import com.nariki.tpks.lab1.model.IncidenceMatrixValidator;
+import com.nariki.tpks.lab1.util.FileWriter;
+import com.nariki.tpks.lab1.util.InputFileChecker;
 
 import javax.swing.*;
 import java.awt.*;
@@ -80,11 +81,12 @@ public class MainFrame extends JFrame {
                     MatrixConverter matrixConverter = new MatrixConverter();
                     matrixConverter.convert(incidenceMatrix.getNumberOfVertex(), incidenceMatrix.getMatrixAsBitVector());
                     matrixConverter.printAM();
-                    /*
+                    FileWriter fileWriter = new FileWriter();
+                    fileWriter.writeArrayOfIntsInFile(matrixConverter.getAdjacencyMatrix(), System.getProperty("user.home") + "\\Desktop\\adjacencyMatrix.txt");
                     // print bit vectors
                     for(int i = 0; i < incidenceMatrix.getMatrixAsBitVector().length; i++) {
                         System.out.println(Long.toBinaryString(incidenceMatrix.getMatrixAsBitVector()[i]));
-                    }*/
+                    }
                 } else {
                     JOptionPane.showMessageDialog(null, "Сначала выберите файл!", "Ошибка!", JOptionPane.ERROR_MESSAGE);
                 }

@@ -1,4 +1,4 @@
-package com.nariki.tpks.lab1.gui;
+package com.nariki.tpks.lab1.util;
 
 import com.nariki.tpks.lab1.model.IncidenceMatrixValidator;
 
@@ -51,7 +51,6 @@ public class InputFileChecker {
             errorString = "Расширение файла болжно быть .txt";
             return false;
         }
-
     }
 
     public int[][] getIncidenceMatrix() {

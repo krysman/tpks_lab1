@@ -18,7 +18,7 @@ public class MatrixConverter {
         maskLoop <<= (amountOfVertices * 2);
     }
 
-    public int [][] convert(int vertices, long [] incidenceMatrix){
+    public void convert(int vertices, long [] incidenceMatrix){
         //корректировка масок зависит от числа вершин графа
         correctMasks(vertices);
         //инициализация матрицы смежности
@@ -42,7 +42,6 @@ public class MatrixConverter {
                 pos2++;
             }
         }
-        return adjacencyMatrix;
     }
 
     private int getAmountOfLoops(int pos2, long [] incidenceMatrix){
@@ -76,5 +75,9 @@ public class MatrixConverter {
                 System.out.println();
             }
         }
+    }
+
+    public int[][] getAdjacencyMatrix() {
+        return adjacencyMatrix;
     }
 }

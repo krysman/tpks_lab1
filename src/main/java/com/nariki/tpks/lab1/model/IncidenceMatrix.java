@@ -13,14 +13,13 @@ public class IncidenceMatrix {
 
         this.incidenceMatrix = incidenceMatrix;
 
-        /*
         // print incidence Matrix
         for(int i = 0; i < incidenceMatrix.length; i++) {
             for(int j = 0; j < incidenceMatrix[0].length; j++) {
                 System.out.print(incidenceMatrix[i][j] + " ");
             }
             System.out.println();
-        }*/
+        }
 
         createMatrixAsBitVector(incidenceMatrix);
     }
@@ -36,7 +35,7 @@ public class IncidenceMatrix {
         *     |-1|           |10|
         *     |2|            |11|
         * ходим по столбцам
-        * начинаем с последнего столбца
+        * начинаем с первого столбца
         * нацинаем с последнего элемента(самой нижней строки) - ему будут сопоставлены два самых правых бита и поднимаемся вверх
         * один столбец - один элемент массива типа long
         * 0     1
@@ -50,8 +49,8 @@ public class IncidenceMatrix {
 
 
         // j*2  -  указывает на позицию в битовом векторе
-        for(int i = matrixAsBitVector.length - 1; i>= 0; i--) {
-            for(int j = numberOfVertex - 1; j >= 0; j--) {
+        for(int i = 0; i < matrixAsBitVector.length; i++) {
+            for(int j = incidenceMatrix.length - 1, position = 0; j >= 0; j--, position++) {
                 // маски
                 long maskForPositiveOne = 1;
                 long maskForNegativeOne = 2;
@@ -59,13 +58,13 @@ public class IncidenceMatrix {
 
                 if(incidenceMatrix[j][i] == 1) {
                     // сдвигаем маску на j*2 позиции влево и применяем операцию ИЛИ к i-му вектору
-                    maskForPositiveOne = maskForPositiveOne << (j*2);
+                    maskForPositiveOne = maskForPositiveOne << (position*2);
                     matrixAsBitVector[i] = matrixAsBitVector[i] | maskForPositiveOne;
                 } else if(incidenceMatrix[j][i] == -1) {
-                    maskForNegativeOne = maskForNegativeOne << (j*2);
+                    maskForNegativeOne = maskForNegativeOne << (position*2);
                     matrixAsBitVector[i] = matrixAsBitVector[i] | maskForNegativeOne;
                 } else if(incidenceMatrix[j][i] == 2) {
-                    maskForTwo = maskForTwo << (j*2);
+                    maskForTwo = maskForTwo << (position*2);
                     matrixAsBitVector[i] = matrixAsBitVector[i] | maskForTwo;
                 }
             }
