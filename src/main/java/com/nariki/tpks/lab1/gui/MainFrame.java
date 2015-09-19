@@ -77,12 +77,10 @@ public class MainFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if(fileHasBeenChosen) {
 
-                    // TODO: передать матрицу инфидентности на обработку   ->  incidenceMatrix
-                    MatrixConverter matrixConverter = new MatrixConverter();
-                    matrixConverter.convert(incidenceMatrix.getNumberOfVertex(), incidenceMatrix.getMatrixAsBitVector());
-                    matrixConverter.printAM();
+                    // TODO: подготовить данные: кол-во вершин (int), массив (byte | short | int | long) и передать на обработку статичному методу
+
                     FileWriter fileWriter = new FileWriter();
-                    fileWriter.writeArrayOfIntsInFile(matrixConverter.getAdjacencyMatrix(), System.getProperty("user.home") + "\\Desktop\\adjacencyMatrix.txt");
+                    //fileWriter.writeArrayOfIntsInFile(matrixConverter.getAdjacencyMatrix(), System.getProperty("user.home") + "\\Desktop\\adjacencyMatrix.txt");
                     // print bit vectors
                     for(int i = 0; i < incidenceMatrix.getMatrixAsBitVector().length; i++) {
                         System.out.println(Long.toBinaryString(incidenceMatrix.getMatrixAsBitVector()[i]));
