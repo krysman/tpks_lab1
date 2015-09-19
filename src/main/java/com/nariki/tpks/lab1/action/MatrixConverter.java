@@ -192,9 +192,6 @@ public class MatrixConverter {
                 loopCounter++;
             }
         }
-        if (loopCounter > 3) {
-            loopCounter = 3;
-        }
         return loopCounter;
     }
 
@@ -205,9 +202,6 @@ public class MatrixConverter {
             if (anIncidenceMatrix == mask) {
                 loopCounter++;
             }
-        }
-        if (loopCounter > 3) {
-            loopCounter = 3;
         }
         return loopCounter;
     }
@@ -220,9 +214,6 @@ public class MatrixConverter {
                 loopCounter++;
             }
         }
-        if (loopCounter > 3) {
-            loopCounter = 3;
-        }
         return loopCounter;
     }
 
@@ -233,9 +224,6 @@ public class MatrixConverter {
             if (anIncidenceMatrix == mask) {
                 loopCounter++;
             }
-        }
-        if (loopCounter > 3) {
-            loopCounter = 3;
         }
         return loopCounter;
     }
@@ -248,9 +236,6 @@ public class MatrixConverter {
                 lineCounter++;
             }
         }
-        if(lineCounter > 3) {
-            lineCounter = 3;
-        }
         return lineCounter;
     }
 
@@ -261,9 +246,6 @@ public class MatrixConverter {
             if (anIncidenceMatrix == mask) {
                 lineCounter++;
             }
-        }
-        if(lineCounter > 3) {
-            lineCounter = 3;
         }
         return lineCounter;
     }
@@ -276,9 +258,6 @@ public class MatrixConverter {
                 lineCounter++;
             }
         }
-        if(lineCounter > 3) {
-            lineCounter = 3;
-        }
         return lineCounter;
     }
 
@@ -289,9 +268,6 @@ public class MatrixConverter {
             if (anIncidenceMatrix == mask) {
                 lineCounter++;
             }
-        }
-        if(lineCounter > 3) {
-            lineCounter = 3;
         }
         return lineCounter;
     }
