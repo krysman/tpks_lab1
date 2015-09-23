@@ -131,7 +131,7 @@ public class MatrixConverter {
                 }
             }
             //увеливаем переменные для обхода матрицы
-            if(pos2 == (vertices -1)){
+            if(pos2 == (vertices - 1)){
                 pos2 = 0;
                 pos1++;
             }else {
@@ -174,7 +174,7 @@ public class MatrixConverter {
                 }
             }
             //увеливаем переменные для обхода матрицы
-            if(pos2 == (vertices -1)){
+            if(pos2 == (vertices - 1)){
                 pos2 = 0;
                 pos1++;
             }else {
@@ -283,7 +283,7 @@ public class MatrixConverter {
     }
 
     private static void setAMCell(int pos1, int pos2, short value, short [] adjacencyMatrix){
-        value = (short) (value >> pos2 * 2);
+        value = (short) (value >> (pos2 * 2));
         adjacencyMatrix[pos1] = (short) (adjacencyMatrix[pos1] | value);
     }
 
