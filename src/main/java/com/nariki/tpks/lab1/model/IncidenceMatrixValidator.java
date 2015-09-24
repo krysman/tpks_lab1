@@ -139,16 +139,16 @@ public class IncidenceMatrixValidator {
 
         for(int i = 0; i < matrixToCheck.length; i++) {
             String lineWithoutSpaces = matrixToCheck[i].replaceAll("\\s+",""); // уберем все пробелы
-            List<Integer> currentRow = new LinkedList<>();
 
             int counterOfEqualsStrings = 0;
             for(int j = i + 1; j < matrixToCheck.length; j++) {
-                if(lineWithoutSpaces.equals(matrixToCheck[j].replaceAll("\\s+",""))) {
+                String currentLine = matrixToCheck[j].replaceAll("\\s+","");
+                if(lineWithoutSpaces.equals(currentLine)) {
                     counterOfEqualsStrings++;
                 }
             }
 
-            if(3 < counterOfEqualsStrings) {
+            if(2 < counterOfEqualsStrings) {
                 errorString = "В одну вершину должно вести (из одной вершины исходить) не более 3-х дуг!";
                 return false;
             }
