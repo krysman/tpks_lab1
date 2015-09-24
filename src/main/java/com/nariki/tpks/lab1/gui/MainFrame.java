@@ -77,14 +77,27 @@ public class MainFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if(fileHasBeenChosen) {
 
-                    // TODO: подготовить данные: кол-во вершин (int), массив (byte | short | int | long) и передать на обработку статичному методу
+                    // TODO: подготовить данные: кол-во вершин (int), массив (byte | short | int | long) и передать на обработку статичному метод
+                    switch(incidenceMatrix.getBitVectorType()) {
+                        case "BYTE":
+                            MatrixConverter.convert(incidenceMatrix.getNumberOfVertex(), incidenceMatrix.getMatrixAsBitVectorByte());
+                            break;
+                        case "SHORT":
+                            MatrixConverter.convert(incidenceMatrix.getNumberOfVertex(), incidenceMatrix.getMatrixAsBitVectorShort());
+                            break;
+                        case "INT":
+                            MatrixConverter.convert(incidenceMatrix.getNumberOfVertex(), incidenceMatrix.getMatrixAsBitVectorInt());
+                            break;
+                        case "LONG":
+                            MatrixConverter.convert(incidenceMatrix.getNumberOfVertex(), incidenceMatrix.getMatrixAsBitVectorLong());
+                            break;
+                        default:
+                            JOptionPane.showMessageDialog(null, "Ошибка преобразования матрицы!", "Ошибка!", JOptionPane.ERROR_MESSAGE);
+                    }
 
                     FileWriter fileWriter = new FileWriter();
                     //fileWriter.writeArrayOfIntsInFile(matrixConverter.getAdjacencyMatrix(), System.getProperty("user.home") + "\\Desktop\\adjacencyMatrix.txt");
-                    // print bit vectors
-                    for(int i = 0; i < incidenceMatrix.getMatrixAsBitVector().length; i++) {
-                        System.out.println(Long.toBinaryString(incidenceMatrix.getMatrixAsBitVector()[i]));
-                    }
+
                 } else {
                     JOptionPane.showMessageDialog(null, "Сначала выберите файл!", "Ошибка!", JOptionPane.ERROR_MESSAGE);
                 }

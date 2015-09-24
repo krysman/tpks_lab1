@@ -33,12 +33,16 @@ public class IncidenceMatrixValidator {
         if(isColumnNumberOk()) {
             if(createAndCheckIncidenceMatrix()) {
                 if(isRowNumberOk()) {
-                    return true;
+                    if(isNumberOfEdgesInOneVertexLessOrEqualsThree()) {
+                        return true;
+                    }
                 }
             }
         }
         return false;
     }
+
+
 
     public String getErrorString() {
         return errorString;
@@ -123,6 +127,33 @@ public class IncidenceMatrixValidator {
             }
         }
 
+        return true;
+    }
+
+    /*
+     * в одну ввершину должно вести не более 3-х дуг. в матрице инцидентности это выражается присутствием 3-х и менее одинаковыс строк
+     * данное ограничение связано с тем, что в матрице смежности(которая будет получена из данной матрици инцидентности)
+     * для каждой вершины есть всего 2 бита, которыми можно закодировать цифры от нуля до трех
+     */
+    private boolean isNumberOfEdgesInOneVertexLessOrEqualsThree() {
+
+        for(int i = 0; i < matrixToCheck.length; i++) {
+            String lineWithoutSpaces = matrixToCheck[i].replaceAll("\\s+",""); // уберем все пробелы
+            List<Integer> currentRow = new LinkedList<>();
+
+            int counterOfEqualsStrings = 0;
+            for(int j = i + 1; j < matrixToCheck.length; j++) {
+                if(lineWithoutSpaces.equals(matrixToCheck[j].replaceAll("\\s+",""))) {
+                    counterOfEqualsStrings++;
+                }
+            }
+
+            if(3 < counterOfEqualsStrings) {
+                errorString = "В одну вершину должно вести (из одной вершины исходить) не более 3-х дуг!";
+                return false;
+            }
+
+        }
         return true;
     }
 
