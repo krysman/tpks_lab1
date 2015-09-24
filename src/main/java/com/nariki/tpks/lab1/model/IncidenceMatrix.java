@@ -18,13 +18,13 @@ public class IncidenceMatrix {
         this.incidenceMatrix = incidenceMatrix;
 
         // print incidence matrix
-        System.out.println("Print incidence matrix");
+       /* System.out.println("Print incidence matrix");
         for(int i = 0; i < incidenceMatrix.length; i++) {
             for(int j = 0; j < incidenceMatrix[0].length; j++) {
                 System.out.print(incidenceMatrix[i][j] + " ");
             }
             System.out.println();
-        }
+        }*/
 
 
         createMatrixAsBitVector();

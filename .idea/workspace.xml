@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a285ca4c-f95e-48a7-b071-848ab0da4973" name="Default" comment="">
+    <list default="true" id="a285ca4c-f95e-48a7-b071-848ab0da4973" name="Default" comment="incidence matrix as different bit vectors creation added">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/util/FileWriter.java" afterPath="$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/util/FileWriter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/model/IncidenceMatrix.java" afterPath="$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/model/IncidenceMatrix.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/model/IncidenceMatrixValidator.java" afterPath="$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/model/IncidenceMatrixValidator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/gui/MainFrame.java" afterPath="$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/gui/MainFrame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -49,38 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MatrixConverter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/action/MatrixConverter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
-              <folding>
-                <element signature="method#convert#0;class#MatrixConverter#0" expanded="false" />
-                <element signature="method#convert#1;class#MatrixConverter#0" expanded="false" />
-                <element signature="method#convert#2;class#MatrixConverter#0" expanded="false" />
-                <element signature="method#convert#3;class#MatrixConverter#0" expanded="false" />
-                <element signature="method#getAmountOfLoops#0;class#MatrixConverter#0" expanded="false" />
-                <element signature="method#getAmountOfLoops#1;class#MatrixConverter#0" expanded="false" />
-                <element signature="method#getAmountOfLoops#2;class#MatrixConverter#0" expanded="false" />
-                <element signature="method#getAmountOfLoops#3;class#MatrixConverter#0" expanded="false" />
-                <element signature="method#isIncident#0;class#MatrixConverter#0" expanded="false" />
-                <element signature="method#isIncident#1;class#MatrixConverter#0" expanded="false" />
-                <element signature="method#isIncident#2;class#MatrixConverter#0" expanded="false" />
-                <element signature="method#isIncident#3;class#MatrixConverter#0" expanded="false" />
-                <element signature="method#setAMCell#0;class#MatrixConverter#0" expanded="false" />
-                <element signature="method#setAMCell#1;class#MatrixConverter#0" expanded="false" />
-                <element signature="method#setAMCell#2;class#MatrixConverter#0" expanded="false" />
-                <element signature="method#setAMCell#3;class#MatrixConverter#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/gui/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6680614">
-              <caret line="96" column="20" selection-start-line="96" selection-start-column="20" selection-end-line="96" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.20111732">
+              <caret line="83" column="77" selection-start-line="83" selection-start-column="77" selection-end-line="83" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -90,11 +63,10 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/model/IncidenceMatrix.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="179" column="38" selection-start-line="179" selection-start-column="38" selection-end-line="179" selection-end-column="38" />
+              <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
               <folding>
-                <element signature="e#7401#7402#0" expanded="true" />
-                <element signature="e#7449#7450#0" expanded="true" />
-                <element signature="e#7493#7494#0" expanded="true" />
+                <element signature="e#7369#7370#0" expanded="true" />
+                <element signature="e#7405#7406#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/util/FileWriter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+              <caret line="82" column="60" selection-start-line="82" selection-start-column="60" selection-end-line="82" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -149,10 +121,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/gui/InputFileChecker.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/util/InputFileChecker.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/util/FileWritter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/util/FileWriter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/action/MatrixConverter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/model/IncidenceMatrixValidator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/model/IncidenceMatrix.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/util/FileWriter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/gui/MainFrame.java" />
       </list>
     </option>
@@ -205,6 +177,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -345,8 +319,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -671,7 +643,9 @@
       <workItem from="1442130295931" duration="1773000" />
       <workItem from="1442328638543" duration="860000" />
       <workItem from="1443087820992" duration="1851000" />
-      <workItem from="1443089701797" duration="925000" />
+      <workItem from="1443089701797" duration="1611000" />
+      <workItem from="1443105238975" duration="599000" />
+      <workItem from="1443107671838" duration="1704000" />
     </task>
     <task id="LOCAL-00001" summary="add execute button">
       <created>1441704163181</created>
@@ -709,11 +683,17 @@
       <option name="project" value="LOCAL" />
       <updated>1442131784620</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="incidence matrix as different bit vectors creation added">
+      <created>1443090711040</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1443090711040</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13381000" />
+    <option name="totallyTimeSpent" value="16370000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -762,7 +742,8 @@
     <MESSAGE value="bug fixes and input data file added" />
     <MESSAGE value="incidence matrix creation bug fix" />
     <MESSAGE value="incidence matrix creation bug fix &amp; writing to file added" />
-    <option name="LAST_COMMIT_MESSAGE" value="incidence matrix creation bug fix &amp; writing to file added" />
+    <MESSAGE value="incidence matrix as different bit vectors creation added" />
+    <option name="LAST_COMMIT_MESSAGE" value="incidence matrix as different bit vectors creation added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1137,26 +1118,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/util/FileWriter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/model/IncidenceMatrixValidator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/gui/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="64" selection-start-line="10" selection-start-column="64" selection-end-line="10" selection-end-column="64" />
-          <folding />
+        <state vertical-scroll-proportion="0.45391062">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/action/MatrixConverter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.33612272">
+          <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
           <folding>
             <element signature="method#convert#0;class#MatrixConverter#0" expanded="false" />
             <element signature="method#convert#1;class#MatrixConverter#0" expanded="false" />
@@ -1178,10 +1150,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/model/IncidenceMatrixValidator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/gui/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45391062">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="64" selection-start-line="10" selection-start-column="64" selection-end-line="10" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/util/FileWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="82" column="60" selection-start-line="82" selection-start-column="60" selection-end-line="82" selection-end-column="60" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1199,19 +1180,18 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/model/IncidenceMatrix.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="179" column="38" selection-start-line="179" selection-start-column="38" selection-end-line="179" selection-end-column="38" />
+          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
           <folding>
-            <element signature="e#7401#7402#0" expanded="true" />
-            <element signature="e#7449#7450#0" expanded="true" />
-            <element signature="e#7493#7494#0" expanded="true" />
+            <element signature="e#7369#7370#0" expanded="true" />
+            <element signature="e#7405#7406#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/nariki/tpks/lab1/gui/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6680614">
-          <caret line="96" column="20" selection-start-line="96" selection-start-column="20" selection-end-line="96" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.20111732">
+          <caret line="83" column="77" selection-start-line="83" selection-start-column="77" selection-end-line="83" selection-end-column="77" />
           <folding />
         </state>
       </provider>

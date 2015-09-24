@@ -7,17 +7,44 @@ import java.io.*;
  */
 public class FileWriter {
 
-    public void writeArrayOfIntsInFile(int[][] arr, String fileName) {
-
+    public void writeArrayOfBitVectorsInFile(byte[] arr, String fileName) {
         PrintWriter writer = null;
         try {
             writer = new PrintWriter(fileName, "UTF-8");
 
             for(int i = 0; i < arr.length; i++) {
-                for(int j = 0; j < arr[0].length; j++) {
-                    writer.print(arr[i][j] + " ");
-                }
-                writer.println();
+                writer.println(Integer.toBinaryString(arr[i]));
+            }
+            writer.close();
+        } catch(FileNotFoundException e) {
+            e.printStackTrace();
+        } catch(UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeArrayOfBitVectorsInFile(short[] arr, String fileName) {
+        PrintWriter writer = null;
+        try {
+            writer = new PrintWriter(fileName, "UTF-8");
+
+            for(int i = 0; i < arr.length; i++) {
+                writer.println(Integer.toBinaryString(arr[i]));
+            }
+            writer.close();
+        } catch(FileNotFoundException e) {
+            e.printStackTrace();
+        } catch(UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void writeArrayOfBitVectorsInFile(int[] arr, String fileName) {
+        PrintWriter writer = null;
+        try {
+            writer = new PrintWriter(fileName, "UTF-8");
+
+            for(int i = 0; i < arr.length; i++) {
+                writer.println(Integer.toBinaryString(arr[i]));
             }
             writer.close();
         } catch(FileNotFoundException e) {
@@ -46,5 +73,20 @@ public class FileWriter {
             *//*ignore*//*
             }
         }*/
+    }
+    public void writeArrayOfBitVectorsInFile(long[] arr, String fileName) {
+        PrintWriter writer = null;
+        try {
+            writer = new PrintWriter(fileName, "UTF-8");
+
+            for(int i = 0; i < arr.length; i++) {
+                writer.println(Long.toBinaryString(arr[i]));
+            }
+            writer.close();
+        } catch(FileNotFoundException e) {
+            e.printStackTrace();
+        } catch(UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
     }
 }
