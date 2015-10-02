@@ -78,28 +78,8 @@ public class MainFrame extends JFrame {
                 if(fileHasBeenChosen) {
                     FileWriter fileWriter = new FileWriter();
                     // TODO: подготовить данные: кол-во вершин (int), массив (byte | short | int | long) и передать на обработку статичному метод
-                    switch(incidenceMatrix.getBitVectorType()) {
-                        case "BYTE":
-                            byte[] adjacencyMatrixByte = MatrixConverter.convert(incidenceMatrix.getNumberOfVertex(), incidenceMatrix.getMatrixAsBitVectorByte());
-                            fileWriter.writeArrayOfBitVectorsInFile(adjacencyMatrixByte, System.getProperty("user.home") + "\\Desktop\\adjacencyMatrix.txt");
-                            break;
-                        case "SHORT":
-                            short[] adjacencyMatrixShort = MatrixConverter.convert(incidenceMatrix.getNumberOfVertex(), incidenceMatrix.getMatrixAsBitVectorShort());
-                            fileWriter.writeArrayOfBitVectorsInFile(adjacencyMatrixShort, System.getProperty("user.home") + "\\Desktop\\adjacencyMatrix.txt");
-                            break;
-                        case "INT":
-                            int[] adjacencyMatrixInt = MatrixConverter.convert(incidenceMatrix.getNumberOfVertex(), incidenceMatrix.getMatrixAsBitVectorInt());
-                            fileWriter.writeArrayOfBitVectorsInFile(adjacencyMatrixInt, System.getProperty("user.home") + "\\Desktop\\adjacencyMatrix.txt");
-                            break;
-                        case "LONG":
-                            long[] adjacencyMatrixLong = MatrixConverter.convert(incidenceMatrix.getNumberOfVertex(), incidenceMatrix.getMatrixAsBitVectorLong());
-                            fileWriter.writeArrayOfBitVectorsInFile(adjacencyMatrixLong, System.getProperty("user.home") + "\\Desktop\\adjacencyMatrix.txt");
-                            break;
-                        default:
-                            JOptionPane.showMessageDialog(null, "Ошибка преобразования матрицы!", "Ошибка!", JOptionPane.ERROR_MESSAGE);
-                    }
-
-
+                    int[] adjacencyMatrixInt = MatrixConverter.convert(incidenceMatrix.getNumberOfVertex(), incidenceMatrix.getMatrixAsBitVectorInt());
+                    fileWriter.writeArrayOfBitVectorsInFile(adjacencyMatrixInt, System.getProperty("user.home") + "\\Desktop\\adjacencyMatrix.txt");
                 } else {
                     JOptionPane.showMessageDialog(null, "Сначала выберите файл!", "Ошибка!", JOptionPane.ERROR_MESSAGE);
                 }
