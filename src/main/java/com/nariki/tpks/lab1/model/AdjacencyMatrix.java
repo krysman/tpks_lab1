@@ -6,16 +6,16 @@ package com.nariki.tpks.lab1.model;
  */
 public class AdjacencyMatrix {
     private int max = 16;
-    private int [] matrix;
+    private char [] matrix;
 
     public AdjacencyMatrix(int amountOfVertices){
         if (amountOfVertices <= max) {
-            matrix = new int [amountOfVertices];
+            matrix = new char [amountOfVertices];
         }
     }
 
 
-    public int[] getMatrix() {
+    public char[] getMatrix() {
         return matrix;
     }
 }

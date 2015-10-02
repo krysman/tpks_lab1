@@ -1,7 +1,6 @@
 package com.nariki.tpks.lab1.action;
 
 import com.nariki.tpks.lab1.model.AdjacencyMatrix;
-import com.nariki.tpks.lab1.model.IncidenceMatrix;
 
 /**
  * Класс MatrixConverter - набор статических методов для обработки МИ.
@@ -15,7 +14,7 @@ public class MatrixConverter {
     * дуг для матрицы смежности.
     * maskLoop - маска петли для матрицы инцидентности
     */
-    public static int[] convert(int vertices, long [] incidenceMatrix){
+    public static char[] convert(int vertices, long [] incidenceMatrix){
         long maskStart = Long.parseLong("01", 2);
         long maskEnd = Long.parseLong("10", 2);
         long maskLoop = Long.parseLong("11", 2);
@@ -28,14 +27,14 @@ public class MatrixConverter {
         aMask <<= amountOfVertices;
         //инициализация матрицы смежности
         AdjacencyMatrix adjacencyMatrix = new AdjacencyMatrix(vertices);
-        int [] result = adjacencyMatrix.getMatrix();
+        char [] result = adjacencyMatrix.getMatrix();
         //переменные для обхода матрицы
         int pos1 = 0; //pos1 - номер слова в массиве
         int pos2 = 0; //pos2 - номер пары бит (нумерация слева направо)
         while(pos1 != vertices){
             if(pos1 == pos2){
                 //ищем и считаем петли
-                if(getAmountOfLoops(pos2, incidenceMatrix, maskLoop)){
+                if(hasLoop(pos2, incidenceMatrix, maskLoop)){
                     setAMCell(pos1, pos2, aMask, result);
                 }
             }else{
@@ -55,7 +54,7 @@ public class MatrixConverter {
         return result;
     }
 
-    private static boolean getAmountOfLoops(int pos2, long [] incidenceMatrix, long maskLoop){
+    private static boolean hasLoop(int pos2, long[] incidenceMatrix, long maskLoop){
         long mask = maskLoop >> (pos2 * 2);
         for (long anIncidenceMatrix : incidenceMatrix) {
             if (anIncidenceMatrix == mask) {
@@ -75,8 +74,8 @@ public class MatrixConverter {
         return false;
     }
 
-    private static void setAMCell(int pos1, int pos2, int value, int [] adjacencyMatrix){
+    private static void setAMCell(int pos1, int pos2, int value, char [] adjacencyMatrix){
         value = value >> pos2;
-        adjacencyMatrix[pos1] = adjacencyMatrix[pos1] | value;
+        adjacencyMatrix[pos1] = (char) (adjacencyMatrix[pos1] | value);
     }
 }
