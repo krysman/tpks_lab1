@@ -76,10 +76,8 @@ public class MainFrame extends JFrame {
         executeButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if(fileHasBeenChosen) {
-                    FileWriter fileWriter = new FileWriter();
-                    // TODO: подготовить данные: кол-во вершин (int), массив (byte | short | int | long) и передать на обработку статичному метод
-                    int[] adjacencyMatrixInt = MatrixConverter.convert(incidenceMatrix.getNumberOfVertex(), incidenceMatrix.getMatrixAsBitVectorInt());
-                    fileWriter.writeArrayOfBitVectorsInFile(adjacencyMatrixInt, System.getProperty("user.home") + "\\Desktop\\adjacencyMatrix.txt");
+                    char[] adjacencyMatrix = MatrixConverter.convert(incidenceMatrix.getNumberOfVertex(), incidenceMatrix.getMatrixAsBitVector());
+                    new FileWriter().writeArrayOfBitVectorsInFile(adjacencyMatrix, incidenceMatrix.getNumberOfVertex(), System.getProperty("user.home") + "\\Desktop\\adjacencyMatrix.txt");
                 } else {
                     JOptionPane.showMessageDialog(null, "Сначала выберите файл!", "Ошибка!", JOptionPane.ERROR_MESSAGE);
                 }

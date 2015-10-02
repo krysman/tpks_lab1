@@ -80,5 +80,4 @@ public class InputFileChecker {
     public String  getErrorMessage() {
         return errorString;
     }
-
 }
