@@ -17,7 +17,7 @@ public class FileWriter {
 
             for(int j = 0; j < arr.length; j++) {
                 StringBuilder result = new StringBuilder();
-                for(int i = numberOfVertex; i >= 0 ; i--) {
+                for(int i = numberOfVertex - 1; i >= 0 ; i--) {
                     int mask = 1 << i;
                     result.append((arr[j] & mask) != 0 ? "1" : "0");
 
