@@ -11,7 +11,7 @@ public class FileWriter {
     public void writeArrayOfBitVectorsInFile(char[] arr, int numberOfVertex, String fullFileName) {
 
         PrintWriter writer = null;
-        int groupSize = 2;
+        int groupSize = 1;
         try {
             writer = new PrintWriter(fullFileName, "UTF-8");
 
